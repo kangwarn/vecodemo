@@ -16,7 +16,7 @@ metadata:
   namespace: default
 spec:
   interval: 10m
-  targetNamespace: default
+  # targetNamespace: default
   sourceRef:
     kind: GitRepository
     name: site1
