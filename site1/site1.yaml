@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: site1
-  path: "./keswick"
+  path: "./base
   prune: true
   timeout: 1m
