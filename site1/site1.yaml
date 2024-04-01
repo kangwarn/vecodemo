@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: site1
-  path: "./base
+  path: "./base"
   prune: true
   timeout: 1m
