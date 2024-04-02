@@ -1,0 +1,33 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: site2
+  namespace: default
+spec:
+  interval: 5m
+  url: https://github.com/kangwarn/keswick.git
+  ref:
+    branch: main
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: site2
+  namespace: default
+spec:
+  interval: 10m
+  # targetNamespace: default
+  sourceRef:
+    kind: GitRepository
+    name: site2
+  path: "./kustomize"
+  prune: true
+  timeout: 1m
+  patches:
+    - patch: |
+        - op: replace
+          path: /spec/imageName
+          value: http://172.20.0.200/jammy-server-cloudimg-amd64.ova
+      target:
+        kind: VirtualMachine
+        name: linux-vm
