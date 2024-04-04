@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: site1
+  name: base
   namespace: default
 spec:
   interval: 5m
@@ -19,7 +19,7 @@ spec:
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
-    name: site1
+    name: base
   path: "./kustomize"
   prune: true
   timeout: 1m
