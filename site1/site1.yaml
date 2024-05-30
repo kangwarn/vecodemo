@@ -30,7 +30,7 @@ spec:
           value: best-effort-xsmall
         - op: replace
           path: /spec/imageName
-          value: 172.20.0.200/ec-wrkr.ova
+          value: 192.168.101.14/ec-wrkr.ova
       target:
         kind: VirtualMachine
         name: linux-vm
