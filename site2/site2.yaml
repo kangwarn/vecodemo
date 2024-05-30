@@ -27,7 +27,7 @@ spec:
     - patch: |
         - op: replace
           path: /spec/imageName
-          value: 172.20.0.200/jammy-server-cloudimg-amd64.ova
+          value: 10.211.177.68/jammy-server-cloudimg-amd64.ova
       target:
         kind: VirtualMachine
         name: linux-vm
