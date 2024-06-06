@@ -15,7 +15,7 @@ metadata:
   name: site2
   namespace: default
 spec:
-  interval: 10m
+  interval: 5m
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
@@ -38,7 +38,7 @@ metadata:
   name: site2-intelgpu-nfd
   namespace: default
 spec:
-  interval: 10m
+  interval: 5m
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
@@ -56,7 +56,7 @@ spec:
   dependsOn:
     - name: site2-intelgpu-nfd
       namespace: default
-  interval: 10m
+  interval: 5m
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
@@ -74,7 +74,7 @@ spec:
   dependsOn:
     - name: site2-intelgpu-node-feature-rules
       namespace: default
-  interval: 10m
+  interval: 5m
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
@@ -92,7 +92,7 @@ spec:
   dependsOn:
     - name: site2-intelgpu-operator
       namespace: default
-  interval: 10m
+  interval: 5m
   # targetNamespace: default
   sourceRef:
     kind: GitRepository
