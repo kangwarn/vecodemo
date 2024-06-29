@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: site4-nvidiagpu
+  namespace: default
+spec:
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: base
+  path: "./gpu/nvidia/kustomize"
+  prune: true
+  timeout: 1m
