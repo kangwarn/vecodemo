@@ -23,11 +23,3 @@ spec:
   path: "./kustomize"
   prune: true
   timeout: 1m
-  patches:
-    - patch: |
-        - op: replace
-          path: /spec/imageName
-          value: 172.20.0.200/jammy-server-cloudimg-amd64.ova
-      target:
-        kind: VirtualMachine
-        name: linux-vm
