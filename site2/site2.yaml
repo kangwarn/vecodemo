@@ -43,6 +43,9 @@ spec:
         - op: replace
           path: /spec/imageName
           value: 172.20.0.200/jammy-server-cloudimg-amd64.ova
+        - op: replace
+          path: /spec/powerState
+          value: powerOff
       target:
         kind: VirtualMachine
         name: linux-vm
