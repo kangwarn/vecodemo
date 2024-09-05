@@ -37,7 +37,7 @@ metadata:
   name: linux-vm-gpu
   namespace: default
 spec:
-  className: guaranteed-small-extraconfig
+  className: guaranteed-small-gpu
   imageName: 172.20.0.200/ubuntu-2204-efi-kube-v1.28.7-gpu.ova
   networkInterfaces:
   - ethernetCardType: vmxnet3
