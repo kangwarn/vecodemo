@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: base
-  path: "./metrics-in-a-box/kustomize
+  path: "./metrics-in-a-box/kustomize"
   prune: true
   timeout: 1m
   patches:
