@@ -1,0 +1,48 @@
+apiVersion: vmoperator.vmware.com/v1alpha1
+kind: VirtualMachineClass
+metadata:
+  name: best-effort-ec-small
+spec:
+  controllerName: vmoperator.vmware.com/ecworker
+  hardware:
+    cpus: 2
+    memory: 8Gi
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ec-system
+---
+apiVersion: vmoperator.vmware.com/v1alpha1
+kind: VirtualMachine
+metadata:
+  name: ec-worker
+  namespace: ec-system
+spec:
+  className: best-effort-ec-small
+  imageName: ec-wrkr.ova
+  powerState: poweredOff
+  vmMetadata:
+    transport: CloudInit
+    configMapName: worker-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: worker-config
+  namespace: ec-system
+data:
+  networkconfig: |
+        version: 2
+        ethernets:
+            eth0:
+                dhcp: "false"
+                addresses:
+                    - 172.16.201.94/24
+                nameservers:
+                    addresses:
+                        - 147.75.69.35
+                        - 1.1.1.1
+                routes:
+                    - to: 0.0.0.0/0
+                      via: 172.16.201.1
