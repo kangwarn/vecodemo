@@ -16,7 +16,7 @@ spec:
     - patch: |
         - op: replace
           path: /spec/metrics-collection/metrics-sink/url
-          value: "http://172.16.101.98:9090/api/v1/write"
+          value: "http://172.16.201.94:9090/api/v1/write"
       target:
         kind: HostConfiguration
         name: ecsmonitoring-metrics
